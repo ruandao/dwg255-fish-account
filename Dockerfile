@@ -12,7 +12,7 @@ COPY go.mod .
 RUN go mod download
 
 COPY . .
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o shippy-cli-consignment
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o fish-account
 
 # RUN container
 FROM alpine:latest
@@ -21,7 +21,6 @@ RUN apk --no-cache add ca-certificates
 
 RUN mkdir /app
 WORKDIR /app
-COPY --from=builder /app/shippy-cli-consignment .
-ADD consignment.json /app/consignment.json
+COPY --from=builder /app/fish-account .
 
-CMD ["./shippy-cli-consignment"]
+CMD ["./fish-account"]
