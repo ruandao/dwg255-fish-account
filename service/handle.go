@@ -2,9 +2,9 @@ package service
 
 import (
 	"context"
-	"fish/account/common"
-	"fish/common/api/thrift/gen-go/rpc"
-	"fish/common/tools"
+	"github.com/ruandao/dwg255-fish-account/common"
+	"github.com/ruandao/dwg255-fish-common/api/thrift/gen-go/rpc"
+	"github.com/ruandao/dwg255-fish-common/tools"
 	"fmt"
 	"github.com/astaxie/beego/logs"
 	"math/rand"
